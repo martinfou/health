@@ -26,12 +26,14 @@ export default {
       datasets: [
         {
           label: 'Data One',
-          backgroundColor: '#f87979',
+          borderColor: '#f87979',
+          fill: false,
           data: [40, 20]
         },
         {
-          labeld: 'Data Two',
-          backgroundColor: 'blue',
+          label: 'Data Two',
+          borderColor: 'blue',
+          fill: false,
           data: [10, 30]
         }
       ]
