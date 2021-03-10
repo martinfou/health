@@ -13,6 +13,7 @@
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 import BarChart from '@/components/BarChart.vue'
+import EventService from '@/services/EventService.js'
 
 export default {
   name: 'Home',
@@ -42,6 +43,16 @@ export default {
       responsive: true,
       maintainAspectRatio: false
     }
-  })
+  }),
+  created() {
+    EventService.getEvents()
+      .then(response => {
+        this.event = response.data
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+
 }
 </script>
